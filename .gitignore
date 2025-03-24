@@ -1,0 +1,6 @@
+
+bin/
+#
+obj/
+# NOT IGNORE
+!bin/Debug/net9.0/appsettings.json
