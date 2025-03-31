@@ -6,11 +6,10 @@ namespace Flashcards.Controller;
 class StackController(string dbConnection)
 {
     readonly SqliteConnection _connection = new(dbConnection);
-    readonly List<FlashcardStack> Stacks = [];
-    void CreateTable()
+    public void CreateTable()
     {
         _connection.Open();
-        _connection.Execute("CREATE TABLE IF NOT EXIST stacks(id int AUTOINCREMENT, name varchar(50) UNIQUE)");
+        _connection.Execute("CREATE TABLE IF NOT EXISTS stacks(id INTEGER PRIMARY KEY AUTOINCREMENT, name varchar(50) UNIQUE)");
         _connection.Close();
     }
     void Add(string name)

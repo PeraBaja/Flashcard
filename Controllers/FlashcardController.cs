@@ -6,7 +6,7 @@ class FlashcardController(string dbConnection, StackController stackController)
 {
     readonly SqliteConnection _connection = new(dbConnection);
 
-    void CreateTable()
+    public void CreateTable()
     {
         _connection.Open();
         _connection.Execute("CREATE TABLE IF NOT EXIST flashcard(id AUTOINCREMENT, name varchar(50))");
