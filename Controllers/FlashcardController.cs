@@ -1,7 +1,8 @@
 using Dapper;
 using Microsoft.Data.Sqlite;
-namespace Flashcard.Models;
-class FlashcardController(string dbConnection)
+using Flashcards.Models;
+namespace Flashcards.Controller;
+class FlashcardController(string dbConnection, StackController stackController)
 {
     readonly SqliteConnection _connection = new(dbConnection);
 
