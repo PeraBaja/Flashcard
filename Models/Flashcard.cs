@@ -3,7 +3,7 @@ namespace Flashcards.Models;
 
 class Flashcard
 {
-    public required ulong Id { get; set; }
+    public ulong Id { get; set; }
 
     public required ulong StackId { get; set; }
 
