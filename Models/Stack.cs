@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-namespace Flashcard.Models;
+namespace Flashcards.Models;
 
 class FlashcardStack
 {

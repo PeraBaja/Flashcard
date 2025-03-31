@@ -1,7 +1,7 @@
 using Dapper;
-using Flashcard.Models;
+using Flashcards.Models;
 using Microsoft.Data.Sqlite;
-namespace Flashcard.Controller;
+namespace Flashcards.Controller;
 
 class StackController(string dbConnection)
 {
