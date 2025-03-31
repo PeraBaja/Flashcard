@@ -10,7 +10,7 @@ class StackController(string dbConnection)
     void CreateTable()
     {
         _connection.Open();
-        _connection.Execute("CREATE TABLE IF NOT EXIST stacks(id AUTOINCREMENT, name varchar(50))");
+        _connection.Execute("CREATE TABLE IF NOT EXIST stacks(id int AUTOINCREMENT, name varchar(50) UNIQUE)");
         _connection.Close();
     }
     void Add(string name)
