@@ -2,5 +2,7 @@
 bin/
 #
 obj/
+#
+*.db
 # NOT IGNORE
 !bin/Debug/net9.0/appsettings.json
