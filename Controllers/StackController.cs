@@ -56,9 +56,13 @@ class StackController(string dbConnection)
         _connection.Close();
         return stack.Id;
     }
-    public void Modify()
+    public void Modify(string stackNameToModify, string? newName)
     {
-
+        if (Exists(stackNameToModify)) throw new ArgumentException($"The stack with name '{stackNameToModify}' already exist");
+        FlashcardStack stack = GetBy(stackNameToModify);
+        _connection.Open();
+        _connection.Execute("UPDATE stacks WHERE name = $Name", );
+        _connection.Close();
     }
 
 
