@@ -30,8 +30,11 @@ class StackController(string dbConnection)
     public void Delete(string name)
     {
         if (Exists(name) is false) throw new ArgumentException($"The stack with name '{name}' not exist");
+
         _connection.Open();
+        _connection.Execute("DELETE FROM flashcards WHERE stackName = $StackName", new { StackName = name });
         _connection.Execute("DELETE FROM stacks WHERE name = $Name", new { Name = name });
+
         _connection.Close();
     }
     public FlashcardStack GetBy(string name, FlashcardController flashcardController)
